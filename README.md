@@ -13,7 +13,8 @@
 ### Quick access index
 <a href="#a-description-of-project-silent-willow">A description of Project Silent Willow?</a><br/>
 <a href="">Technology involved</a><br/>
-<a href="#the-functions-of-project-silent-willow">The functions of Project Silent Willow</a>
+<a href="#the-functions-of-project-silent-willow">The functions of Project Silent Willow</a><br/>
+<a href="#files-in-this-repository">Files in this repository</a>
 
 ### A description of Project Silent Willow
 Project Silent Willow is a mechanum wheel vehicle (meaning it can move in any direction without having to turn). I have been working on it for 2 years by now and will continue working on it through highschool as I develop my programming skills originally started off with just the base of the vehicle only having bare minimum features such as speed and direction control. As mentioned above, it is controlled by a custom application which I made in MIT App Inventor (ai2) and in the future I am planning to completely custom make the application in Android Studio using Kotlin and XML. I then later found out about Jetson nanos and I started integrating them in with for example the LiDAR being the first integration.
@@ -22,3 +23,12 @@ Although Project Silent Willow is the vehicle itself, the group of words ```Proj
 ### Technology involved
 The main pieces of technology used include Arduinos, Nvidia Jetson nanos and a RPLiDAR A1M8 scanner although there are others such as DRV8825 (stepper motor drivers), shift registers, HC-05 BT modules, and stepper motors.
 ### The functions of Project Silent Willow
+
+### Files in this repository
+
+<a href="https://github.com/win21H2/Project-Silent-Willow/tree/main/main%20code">`/main code`</a><br/>
+<a href="https://github.com/win21H2/Project-Silent-Willow/blob/main/main%20code/BTcontrol.ino">`main code/BTcontrol.ino`</a> => Bluetooth control<br/>
+<a href="https://github.com/win21H2/Project-Silent-Willow/blob/main/main%20code/SRcontrol.ino">`main code/SRcontrol.ino`</a> => Serial control (from Nvidia Jetson nano)
+
+<a href="https://github.com/win21H2/Project-Silent-Willow/tree/main/sample%20code">`/sample code`</a><br/>
+<a href="https://github.com/win21H2/Project-Silent-Willow/blob/main/sample%20code/switchcase..ino">`sample code/switchcase.ino`</a> => Testing switch cases (serial and bluetooth control)

@@ -8,6 +8,9 @@ void loop() {
   if (Serial.available() > 0) {
     incomingByte = Serial.read();
 
+    //? make an init switch which compares if the iB is 'O' and if so, start running the code in switch case 'O'
+    //! it then compares if the case is 'A' and if so, run the code in case 'A' (THIS IS FOR THE BLUETOOTH CONTROL)
+
     switch (incomingByte) {
         case 'O':
             Serial.println("IN CASE: O");
