@@ -1,10 +1,10 @@
 #include <SoftwareSerial.h>
 #include <AccelStepper.h>
 
-AccelStepper w1(1, 3, 2); 
-AccelStepper w2(1, 5, 4); 
-AccelStepper w3(1, 7, 6);  
-AccelStepper w4(1, 9, 8); 
+AccelStepper w1(1, 41, 40);
+AccelStepper w2(1, 43, 42);
+AccelStepper w3(1, 45, 44);
+AccelStepper w4(1, 47, 46);
 
 int wheelSpeed = 1500;
 
