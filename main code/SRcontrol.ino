@@ -8,9 +8,9 @@ AccelStepper w4(1, 47, 46);
 
 int wheelSpeed = 1500;
 
-const int latchPin = 12;
-const int clockPin = 8;
+const int clockPin = 10;
 const int dataPin = 11;
+const int latchPin = 12;
 
 void setup() {
   w1.setMaxSpeed(3000);
@@ -22,6 +22,12 @@ void setup() {
   pinMode(clockPin,OUTPUT);
   pinMode(dataPin,OUTPUT);
   Serial.begin(11520);
+
+  digitalWrite(clockPin, HIGH);
+  digitalWrite(clockPin, LOW);
+  digitalWrite(latchPin,LOW);
+  shiftOut(dataPin,clockPin,MSBFIRST, 252);
+  digitalWrite(latchPin,HIGH);
 }
 
 void loop() {
@@ -29,27 +35,18 @@ void loop() {
     int inByte = Serial.read();
     switch (inByte) {
       case 'A':
-        digitalWrite(latchPin,LOW);
-        shiftOut(dataPin,clockPin,MSBFIRST, 218);
-        digitalWrite(latchPin,HIGH);
-        w1.setSpeed(-wheelSpeed);
+        w1.setSpeed(wheelSpeed);
         w2.setSpeed(wheelSpeed);
-        w3.setSpeed(wheelSpeed);
+        w3.setSpeed(-wheelSpeed);
         w4.setSpeed(-wheelSpeed);
         break;
       case 'B':
-        digitalWrite(latchPin,LOW);
-        shiftOut(dataPin,clockPin,MSBFIRST, 96);
-        digitalWrite(latchPin,HIGH);
-        w1.setSpeed(wheelSpeed);
+        w1.setSpeed(-wheelSpeed);
         w2.setSpeed(-wheelSpeed);
-        w3.setSpeed(-wheelSpeed);
+        w3.setSpeed(wheelSpeed);
         w4.setSpeed(wheelSpeed);
         break;
       case 'N':
-        digitalWrite(latchPin,LOW);
-        shiftOut(dataPin,clockPin,MSBFIRST, 252);
-        digitalWrite(latchPin,HIGH);
         w1.setSpeed(0);
         w2.setSpeed(0);
         w3.setSpeed(0);
@@ -57,6 +54,8 @@ void loop() {
         break;
     }
   }
+  digitalWrite(clockPin, HIGH);
+  digitalWrite(clockPin, LOW);
   w1.runSpeed();
   w2.runSpeed();
   w3.runSpeed();

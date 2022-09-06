@@ -1,151 +1,159 @@
-// #include <SoftwareSerial.h>
-// #include <AccelStepper.h>
+#include <SoftwareSerial.h>
+#include <AccelStepper.h>
 
-// SoftwareSerial Bluetooth(A8, 38);
-// // STEP, DIR
-// AccelStepper LB(1, 41, 40);
-// AccelStepper LF(1, 43, 42);
-// AccelStepper RB(1, 45, 44);
-// AccelStepper RF(1, 47, 46);
+SoftwareSerial Bluetooth(A8, 38);
+// STEP, DIR
+AccelStepper LB(1, 41, 40);
+AccelStepper LF(1, 43, 42);
+AccelStepper RB(1, 45, 44);
+AccelStepper RF(1, 47, 46);
 
-// int wheelSpeed = 1500;
-// int dataIn;
+int wheelSpeed = 1500;
+int dataIn;
 
-// const int clockPin = 10;
-// const int dataPin = 11;
-// const int latchPin = 12;
+const int clockPin = 10;
+const int dataPin = 11;
+const int latchPin = 12;
 
-// /*
-// 0 - 252
-// 1 - 96
-// 2 - 218
-// 3 - 242
-// 4 - 102
-// 5 - 182
-// 6 - 190
-// 7 - 224
-// 8 - 254
-// 9 - 246
-// */
+/*
+0 - 252
+1 - 96
+2 - 218
+3 - 242
+4 - 102
+5 - 182
+6 - 190
+7 - 224
+8 - 254
+9 - 246
+*/
 
-// void setup (){
-//   LB.setMaxSpeed(3000);
-//   LF.setMaxSpeed(3000);
-//   RB.setMaxSpeed(3000);
-//   RF.setMaxSpeed(3000);
+void setup (){
+  LB.setMaxSpeed(3000);
+  LF.setMaxSpeed(3000);
+  RB.setMaxSpeed(3000);
+  RF.setMaxSpeed(3000);
 
-//   pinMode(latchPin,OUTPUT);
-//   pinMode(clockPin,OUTPUT);
-//   pinMode(dataPin,OUTPUT);
+  pinMode(latchPin,OUTPUT);
+  pinMode(clockPin,OUTPUT);
+  pinMode(dataPin,OUTPUT);
   
-//   Bluetooth.begin(9600);
-//   Serial.begin(38400);
-// }
+  Bluetooth.begin(9600);
+  Serial.begin(38400);
+}
 
-// void loop(){
-//   digitalWrite(clockPin, HIGH);
-//   digitalWrite(clockPin, LOW);
-//   if (Bluetooth.available() > 0) {
-//     dataIn = Bluetooth.read();
-//     if (dataIn == 0) {
-//       digitalWrite(latchPin, LOW);
-//       shiftOut(dataPin,clockPin, MSBFIRST, 252);
-//       digitalWrite(latchPin, HIGH);
-//       Serial.println("0");
-//       stopmoving();
-//     }
-//     if (dataIn == 2) {
-//       digitalWrite(latchPin, LOW);
-//       shiftOut(dataPin,clockPin, MSBFIRST, 218);
-//       digitalWrite(latchPin, HIGH);
-//       Serial.println("2");
-//       forward();
-//     }
-//     if (dataIn == 1) {
-//       digitalWrite(latchPin, LOW);
-//       shiftOut(dataPin,clockPin, MSBFIRST, 96);
-//       digitalWrite(latchPin, HIGH);
-//       Serial.println("1");
-//       backward();
-//     }
-//     if (dataIn == 3) {
-//       digitalWrite(latchPin, LOW);
-//       shiftOut(dataPin,clockPin, MSBFIRST, (242));
-//       digitalWrite(latchPin, HIGH);
-//       Serial.println("3");
-//       sidewaysleft();
-//     }
-//     if (dataIn == 4) {
-//       digitalWrite(latchPin, LOW);
-//       shiftOut(dataPin,clockPin, MSBFIRST, (102));
-//       digitalWrite(latchPin, HIGH);
-//       Serial.println("4");
-//       sidewaysright();
-//     }
-//     if (dataIn == 5) {
-//       digitalWrite(latchPin, LOW);
-//       shiftOut(dataPin,clockPin, MSBFIRST, (182));
-//       digitalWrite(latchPin, HIGH);
-//       Serial.println("5");
-//       rotateleft();
-//     }
-//     if (dataIn == 6) {
-//       digitalWrite(latchPin, LOW);
-//       shiftOut(dataPin,clockPin, MSBFIRST, (190));
-//       digitalWrite(latchPin, HIGH);
-//       Serial.println("6");
-//       rotateright();
-//     }
-//      if (dataIn >= 9) {
-//       wheelSpeed = dataIn * 10;
-//       Serial.println(wheelSpeed);
-//     }
-//   }
-//   LB.runSpeed();
-//   LF.runSpeed();
-//   RB.runSpeed();
-//   RF.runSpeed();
-// }
+void loop(){
+    digitalWrite(clockPin, HIGH);
+    digitalWrite(clockPin, LOW);
 
-// void forward() {
-//   LF.setSpeed(-wheelSpeed);
-//   LB.setSpeed(wheelSpeed);
-//   RF.setSpeed(wheelSpeed);
-//   RB.setSpeed(-wheelSpeed);
-// }
-// void backward() {
-//   LF.setSpeed(wheelSpeed);
-//   LB.setSpeed(-wheelSpeed);
-//   RF.setSpeed(-wheelSpeed);
-//   RB.setSpeed(wheelSpeed);
-// }
-// void sidewaysright() {
-//   LF.setSpeed(wheelSpeed);
-//   LB.setSpeed(-wheelSpeed);
-//   RF.setSpeed(wheelSpeed);
-//   RB.setSpeed(-wheelSpeed);
-// }
-// void sidewaysleft() {
-//   LF.setSpeed(-wheelSpeed);
-//   LB.setSpeed(wheelSpeed);
-//   RF.setSpeed(-wheelSpeed);
-//   RB.setSpeed(wheelSpeed);
-// }
-// void rotateleft() {
-//   LF.setSpeed(wheelSpeed);
-//   LB.setSpeed(wheelSpeed);
-//   RF.setSpeed(wheelSpeed);
-//   RB.setSpeed(wheelSpeed);
-// }
-// void rotateright() {
-//   LF.setSpeed(-wheelSpeed);
-//   LB.setSpeed(-wheelSpeed);
-//   RF.setSpeed(-wheelSpeed);
-//   RB.setSpeed(-wheelSpeed);
-// }
-// void stopmoving() {
-//   LF.setSpeed(0);
-//   LB.setSpeed(0);
-//   RF.setSpeed(0);
-//   RB.setSpeed(0);
-// }
+    if (Serial.available() > 0) {
+    dataIn = Serial.read();
+    if (dataIn == 'H') {
+        
+    }
+      
+
+  if (Bluetooth.available() > 0) {
+    dataIn = Bluetooth.read();
+    if (dataIn == 0) {
+      digitalWrite(latchPin, LOW);
+      shiftOut(dataPin,clockPin, MSBFIRST, 252);
+      digitalWrite(latchPin, HIGH);
+      Serial.println("0");
+      stopmoving();
+    }
+    if (dataIn == 2) {
+      digitalWrite(latchPin, LOW);
+      shiftOut(dataPin,clockPin, MSBFIRST, 218);
+      digitalWrite(latchPin, HIGH);
+      Serial.println("2");
+      forward();
+    }
+    if (dataIn == 1) {
+      digitalWrite(latchPin, LOW);
+      shiftOut(dataPin,clockPin, MSBFIRST, 96);
+      digitalWrite(latchPin, HIGH);
+      Serial.println("1");
+      backward();
+    }
+    if (dataIn == 3) {
+      digitalWrite(latchPin, LOW);
+      shiftOut(dataPin,clockPin, MSBFIRST, (242));
+      digitalWrite(latchPin, HIGH);
+      Serial.println("3");
+      sidewaysleft();
+    }
+    if (dataIn == 4) {
+      digitalWrite(latchPin, LOW);
+      shiftOut(dataPin,clockPin, MSBFIRST, (102));
+      digitalWrite(latchPin, HIGH);
+      Serial.println("4");
+      sidewaysright();
+    }
+    if (dataIn == 5) {
+      digitalWrite(latchPin, LOW);
+      shiftOut(dataPin,clockPin, MSBFIRST, (182));
+      digitalWrite(latchPin, HIGH);
+      Serial.println("5");
+      rotateleft();
+    }
+    if (dataIn == 6) {
+      digitalWrite(latchPin, LOW);
+      shiftOut(dataPin,clockPin, MSBFIRST, (190));
+      digitalWrite(latchPin, HIGH);
+      Serial.println("6");
+      rotateright();
+    }
+     if (dataIn >= 9) {
+      wheelSpeed = dataIn * 10;
+      Serial.println(wheelSpeed);
+    }
+  }
+  LB.runSpeed();
+  LF.runSpeed();
+  RB.runSpeed();
+  RF.runSpeed();
+}
+
+void forward() {
+  LF.setSpeed(wheelSpeed);
+  LB.setSpeed(wheelSpeed);
+  RF.setSpeed(-wheelSpeed);
+  RB.setSpeed(-wheelSpeed);
+}
+void backward() {
+  LF.setSpeed(-wheelSpeed);
+  LB.setSpeed(-wheelSpeed);
+  RF.setSpeed(wheelSpeed);
+  RB.setSpeed(wheelSpeed);
+}
+void sidewaysright() {
+  LF.setSpeed(wheelSpeed);
+  LB.setSpeed(-wheelSpeed);
+  RF.setSpeed(wheelSpeed);
+  RB.setSpeed(-wheelSpeed);
+}
+void sidewaysleft() {
+  LF.setSpeed(wheelSpeed);
+  LB.setSpeed(wheelSpeed);
+  RF.setSpeed(wheelSpeed);
+  RB.setSpeed(wheelSpeed);
+}
+void rotateleft() {
+  LF.setSpeed(wheelSpeed);
+  LB.setSpeed(wheelSpeed);
+  RF.setSpeed(wheelSpeed);
+  RB.setSpeed(wheelSpeed);
+}
+void rotateright() {
+  LF.setSpeed(-wheelSpeed);
+  LB.setSpeed(-wheelSpeed);
+  RF.setSpeed(-wheelSpeed);
+  RB.setSpeed(-wheelSpeed);
+}
+void stopmoving() {
+  LF.setSpeed(0);
+  LB.setSpeed(0);
+  RF.setSpeed(0);
+  RB.setSpeed(0);
+}
