@@ -55,91 +55,95 @@ void loop(){
     if (Bluetooth.available() > 0) {
         dataIn = Bluetooth.read();
 
-        /*
-        do something like the below:
+        int AISYS = dataIn;
 
-        take the data in and set it as the value of a variable
-
-        check the value of the variable and if it matches for example the value of the number 8, it turns off the AI system
-         */
-
-        if (dataIn == 8) {
-            if (dataIn == 0) {
-                digitalWrite(latchPin, LOW);
-                shiftOut(dataPin,clockPin, MSBFIRST, 252);
-                digitalWrite(latchPin, HIGH);
-                stopmoving();
-            }
-            if (dataIn == 2) {
-                digitalWrite(latchPin, LOW);
-                shiftOut(dataPin,clockPin, MSBFIRST, 218);
-                digitalWrite(latchPin, HIGH);
-                forward();
-            }
-            if (dataIn == 1) {
-                digitalWrite(latchPin, LOW);
-                shiftOut(dataPin,clockPin, MSBFIRST, 96);
-                digitalWrite(latchPin, HIGH);
-                backward();
-            }
-            if (dataIn == 3) {
-                digitalWrite(latchPin, LOW);
-                shiftOut(dataPin,clockPin, MSBFIRST, (242));
-                digitalWrite(latchPin, HIGH);
-                sidewaysleft();
-            }
-            if (dataIn == 4) {
-                digitalWrite(latchPin, LOW);
-                shiftOut(dataPin,clockPin, MSBFIRST, (102));
-                digitalWrite(latchPin, HIGH);
-                sidewaysright();
-            }
-            if (dataIn == 5) {
-                digitalWrite(latchPin, LOW);
-                shiftOut(dataPin,clockPin, MSBFIRST, (182));
-                digitalWrite(latchPin, HIGH);
-                rotateleft();
-            }
-            if (dataIn == 6) {
-                digitalWrite(latchPin, LOW);
-                shiftOut(dataPin,clockPin, MSBFIRST, (190));
-                digitalWrite(latchPin, HIGH);
-                rotateright();
-            }
-            if (dataIn >= 9) {
-                wheelSpeed = dataIn * 10;
-            }
-
-            LB.runSpeed();
-            LF.runSpeed();
-            RB.runSpeed();
-            RF.runSpeed();
+        if (AISYS == 8) {
+            AIOFF();
         }
+        if (AISYS == 7) {
+            AION();
+        }
+    }
+}
 
-        else if (dataIn == 7) {
-            if (Serial.available() > 0) {
-                int inByte = Serial.read();
-                switch (inByte) {
-                case 'A':
-                    LF.setSpeed(wheelSpeed);
-                    LB.setSpeed(wheelSpeed);
-                    RF.setSpeed(-wheelSpeed);
-                    RB.setSpeed(-wheelSpeed);
-                    break;
-                case 'B':
-                    LF.setSpeed(-wheelSpeed);
-                    LB.setSpeed(-wheelSpeed);
-                    RF.setSpeed(wheelSpeed);
-                    RB.setSpeed(wheelSpeed);
-                    break;
-                case 'N':
-                    LF.setSpeed(0);
-                    LB.setSpeed(0);
-                    RF.setSpeed(0);
-                    RB.setSpeed(0);
-                    break;
-                }
-            }
+void AIOFF() {
+    if (Bluetooth.available() > 0) {
+        dataIn = Bluetooth.read();
+
+        if (dataIn == 0) {
+            digitalWrite(latchPin, LOW);
+            shiftOut(dataPin,clockPin, MSBFIRST, 252);
+            digitalWrite(latchPin, HIGH);
+            stopmoving();
+        }
+        if (dataIn == 2) {
+            digitalWrite(latchPin, LOW);
+            shiftOut(dataPin,clockPin, MSBFIRST, 218);
+            digitalWrite(latchPin, HIGH);
+            forward();
+        }
+        if (dataIn == 1) {
+            digitalWrite(latchPin, LOW);
+            shiftOut(dataPin,clockPin, MSBFIRST, 96);
+            digitalWrite(latchPin, HIGH);
+            backward();
+        }
+        if (dataIn == 3) {
+            digitalWrite(latchPin, LOW);
+            shiftOut(dataPin,clockPin, MSBFIRST, (242));
+            digitalWrite(latchPin, HIGH);
+            sidewaysleft();
+        }
+        if (dataIn == 4) {
+            digitalWrite(latchPin, LOW);
+            shiftOut(dataPin,clockPin, MSBFIRST, (102));
+            digitalWrite(latchPin, HIGH);
+            sidewaysright();
+        }
+        if (dataIn == 5) {
+            digitalWrite(latchPin, LOW);
+            shiftOut(dataPin,clockPin, MSBFIRST, (182));
+            digitalWrite(latchPin, HIGH);
+            rotateleft();
+        }
+        if (dataIn == 6) {
+            digitalWrite(latchPin, LOW);
+            shiftOut(dataPin,clockPin, MSBFIRST, (190));
+            digitalWrite(latchPin, HIGH);
+            rotateright();
+        }
+        if (dataIn >= 9) {
+            wheelSpeed = dataIn * 10;
+        }
+    }
+    LB.runSpeed();
+    LF.runSpeed();
+    RB.runSpeed();
+    RF.runSpeed();
+}
+
+void AION() {
+    if (Serial.available() > 0) {
+        int inByte = Serial.read();
+        switch (inByte) {
+        case 'A':
+            LF.setSpeed(wheelSpeed);
+            LB.setSpeed(wheelSpeed);
+            RF.setSpeed(-wheelSpeed);
+            RB.setSpeed(-wheelSpeed);
+            break;
+        case 'B':
+            LF.setSpeed(-wheelSpeed);
+            LB.setSpeed(-wheelSpeed);
+            RF.setSpeed(wheelSpeed);
+            RB.setSpeed(wheelSpeed);
+            break;
+        case 'N':
+            LF.setSpeed(0);
+            LB.setSpeed(0);
+            RF.setSpeed(0);
+            RB.setSpeed(0);
+            break;
         }
     }
 }
