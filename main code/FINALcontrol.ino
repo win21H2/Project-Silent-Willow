@@ -67,6 +67,8 @@ void loop(){
 }
 
 void AIOFF() {
+    //! REQUIRED: Try to make a switch case which takes in diff parameters 
+
     if (Bluetooth.available() > 0) {
         dataIn = Bluetooth.read();
 

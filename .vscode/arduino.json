@@ -2,6 +2,6 @@
     "port": "COM5",
     "board": "arduino:avr:mega",
     "programmer": "arduino:avrispmkii",
-    "sketch": "main code\\FINALcontrol.ino",
+    "sketch": "main code\\SRcontrol.ino",
     "configuration": "cpu=atmega2560"
 }
