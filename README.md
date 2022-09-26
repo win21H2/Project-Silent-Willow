@@ -7,7 +7,7 @@
 <br/>
 
 ### Description
-##### I will store all of Project Silent Willow's code as well as other code used for testing the vehicle in this repository.
+##### I will store all of Project Silent Willow's code as well as other code used for testing the vehicle in this repository. Please note that code from the previous image recognition project will be stored in this repository instead of two different repos!
 <br/>
 
 ### Quick access index
@@ -15,8 +15,8 @@ Project Silent Willow<br>
 <a href="#a-description-of-project-silent-willow">A description of Project Silent Willow</a><br/>
 <a href="">Technology involved</a><br/>
 <a href="#the-functions-of-project-silent-willow">The functions of Project Silent Willow</a><br/>
-<a href="#files-in-this-repository">Files in this repository</a><br/><br/>
-Image recognition<br/>
+<a href="#files-in-this-repository">Files in this repository</a><br/>
+<a href="#image-recognition-with-project-silent-willow">Image recognition</a>
 
 
 ### A description of Project Silent Willow
@@ -30,15 +30,19 @@ The main pieces of technology used include Arduinos, Nvidia Jetson nanos and a R
 ### Files in this repository
 
 <a href="https://github.com/win21H2/Project-Silent-Willow/tree/main/main%20code">`/main code`</a><br/>
-<a href="https://github.com/win21H2/Project-Silent-Willow/blob/main/main%20code/BTcontrol.ino">`main code/BTcontrol.ino`</a> => Bluetooth control<br/>
-<a href="https://github.com/win21H2/Project-Silent-Willow/blob/main/main%20code/SRcontrol.ino">`main code/SRcontrol.ino`</a> => Serial control (from Nvidia Jetson nano)
+<a href="https://github.com/win21H2/Project-Silent-Willow/blob/main/main%20code/BTcontrol.ino">`/main code/BTcontrol.ino`</a> => Bluetooth control<br/>
+<a href="https://github.com/win21H2/Project-Silent-Willow/blob/main/main%20code/SRcontrol.ino">`/main code/SRcontrol.ino`</a> => Serial control (from Nvidia Jetson nano)
 
 <a href="https://github.com/win21H2/Project-Silent-Willow/tree/main/sample%20code">`/sample code`</a><br/>
 <a href="https://github.com/win21H2/Project-Silent-Willow/blob/main/sample%20code/switchcase..ino">`sample code/switchcase.ino`</a> => Testing switch cases (serial and bluetooth control)
 
-# TEMP. INFORMATION ADDITION
+<a href="https://github.com/win21H2/Project-Silent-Willow/tree/main/image-recognition">`/image-recognition`</a><br/>
+<a href="https://github.com/win21H2/Project-Silent-Willow/blob/main/image-recognition/image-recognition.ipynb">`/image-recognition/image-recognition.ipynb`</a> => The image recognition program Jupyter notebook<br/>
+<a href="https://github.com/win21H2/Project-Silent-Willow/tree/main/image-recognition/test%20code">`/image-recognition/test code`</a><br/>
+<a href="https://github.com/win21H2/Project-Silent-Willow/blob/main/image-recognition/test%20code/arduinoledtest.ino">`/image-recognition/test code/arduinoledtest.ino`</a> => Serial test with Arduino and some LEDs<br/>
+<a href="https://github.com/win21H2/Project-Silent-Willow/blob/main/image-recognition/test%20code/caseswitch.ino">`/image-recognition/test code/caseswitch.ino`</a> => Serial test with Arduino and some LEDs (COPY)<br/>
 
-<h1 align="center">Image Recognition<br>With Project Silent Willow</h1>
+# Image recognition with Project Silent Willow
 
 >Throughout the repository, you will learn how to setup your Jetson nano to run a Jupyter Labs notebook provided by the Nvidia DLI. You will also learn how to edit the code so that you can make an Arduino respond to data it recieves from the Jetson nano
 
