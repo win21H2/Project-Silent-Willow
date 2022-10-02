@@ -1,23 +1,10 @@
-<h2 align="center">Project Silent Willow</h2>
+<h1 align="center">Project Silent Willow</h1>
 <p align="center">
     <img src="https://user-images.githubusercontent.com/92825997/187325584-4cc5d7f3-468a-4426-8c7f-93117b1a4f07.png" width=200/>
     <img src="https://user-images.githubusercontent.com/92825997/187325625-ba71f7d2-1b81-47a8-98ec-602794a38036.png" width=200/>
 </p>
 <br/>
 <br/>
-
-### Description
-##### I will store all of Project Silent Willow's code as well as other code used for testing the vehicle in this repository. Please note that code from the previous image recognition project will be stored in this repository instead of two different repos!
-<br/>
-
-### Quick access index
-Project Silent Willow<br>
-<a href="#a-description-of-project-silent-willow">A description of Project Silent Willow</a><br/>
-<a href="">Technology involved</a><br/>
-<a href="#the-functions-of-project-silent-willow">The functions of Project Silent Willow</a><br/>
-<a href="#files-in-this-repository">Files in this repository</a><br/>
-<a href="#image-recognition-with-project-silent-willow">Image recognition</a>
-
 
 ### A description of Project Silent Willow
 Project Silent Willow is a mechanum wheel vehicle (meaning it can move in any direction without having to turn). I have been working on it for 2 years by now and will continue working on it through highschool as I develop my programming skills originally started off with just the base of the vehicle only having bare minimum features such as speed and direction control. As mentioned above, it is controlled by a custom application which I made in MIT App Inventor (ai2) and in the future I am planning to completely custom make the application in Android Studio using Kotlin and XML. I then later found out about Jetson nanos and I started integrating them in with for example the LiDAR being the first integration.
@@ -26,7 +13,7 @@ Although Project Silent Willow is the vehicle itself, the group of words ```Proj
 ### Technology involved
 The main pieces of technology used include Arduinos, Nvidia Jetson nanos and a RPLiDAR A1M8 scanner although there are others such as DRV8825 (stepper motor drivers), shift registers, HC-05 BT modules, and stepper motors.
 ### The functions of Project Silent Willow
-
+Project Silent Willow is intended to be used as a vehicle which can drive in smaller more confined spaces which might be for example hazardous to people and as such, has a camera and a LiDAR unit near the top of the vehicle
 ### Files in this repository
 
 <a href="https://github.com/win21H2/Project-Silent-Willow/tree/main/main%20code">`/main code`</a><br/>
@@ -44,7 +31,7 @@ The main pieces of technology used include Arduinos, Nvidia Jetson nanos and a R
 
 # Image recognition with Project Silent Willow
 
->Throughout the repository, you will learn how to setup your Jetson nano to run a Jupyter Labs notebook provided by the Nvidia DLI. You will also learn how to edit the code so that you can make an Arduino respond to data it recieves from the Jetson nano
+>Throughout this section of the repository, you will learn how to setup your Jetson nano to run a Jupyter Labs notebook provided by the Nvidia DLI. You will also learn how to edit the code so that you can make an Arduino respond to data it recieves from the Jetson nano
 
 ### Quick access index
 ><a a href="#prerequisites">1 - Prerequisites</a><br>
