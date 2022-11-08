@@ -11,6 +11,29 @@ Project Silent Willow is a mechanum wheel vehicle (meaning it can move in any di
 
 Although Project Silent Willow is the vehicle itself, the group of words ```Project Silent Willow``` represents a larger project (which includes this repository, other repositories [such as <a href="https://github.com/win21H2/Project-Silent-Willow-Main-Application">Project-Silent-Willow-Main-Application</a> which can be run on multiple OSes. Currently, I am working on a Windows Desktop version and trying to get a galaxy watch version running], and my <a href="https://324hz.dev">main website</a>) which consists of multiple smaller projects such as the above mentioned and LiDAR scanning.
 
+### Main future steps
+ - Create documentation for the hardware side of the project (under `HARDWARE.md`)
+ - Work on integrating the LiDAR unit (such as distance detection for vehicle control)
+ - Try to integrate image segmentation (with object detection)
+ 
+Image segmentation example<br><br>
+![image](https://user-images.githubusercontent.com/92825997/200585969-ea243867-8ffa-4cd4-9251-5ca5d6b9b944.png)
+ 
+### Feedback from Nvidia DLI (Jetson AI specialist certification)
+##### AI:  3.5<br>
+> Considering if you plan to continue developing the project, I’d encourage you to incorporate additional DNNs like object detection, segmentation, ect for more complex autonomous navigation. Maybe you already plan to do this.
+
+##### Impact: 4<br>
+> The work aims to improve the agility of autonomous ground vehicles and hence has many potential impacts in robotics.
+
+##### Reproducibility:  3.5<br>
+> The code appears well-written an easy to follow. I didn’t find plans for the physical robot itself, but maybe you have that somewhere?
+
+##### Documentation:  4<br>
+> Thorough and well-written documentation of the code!
+
+<br>
+
 ### Technology involved
 The main pieces of technology used include Arduinos, Nvidia Jetson nanos and a RPLiDAR A1M8 scanner although there are others such as DRV8825 (stepper motor drivers), shift registers, HC-05 BT modules, and stepper motors.
 ### The functions of Project Silent Willow
