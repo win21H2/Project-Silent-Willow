@@ -1,7 +1,7 @@
 <h1 align="center">Project Silent Willow</h1>
 <p align="center">
     <img src="https://user-images.githubusercontent.com/92825997/187325584-4cc5d7f3-468a-4426-8c7f-93117b1a4f07.png" width=200/>
-    <img src="https://user-images.githubusercontent.com/92825997/187325625-ba71f7d2-1b81-47a8-98ec-602794a38036.png" width=200/>
+    <img src="https://user-images.githubusercontent.com/92825997/227755863-9b850c8b-8f42-44a1-8fad-97de316e41c8.png" width=200/>
 </p>
 <br/>
 <br/>
@@ -11,6 +11,18 @@ Project Silent Willow is a mechanum wheel vehicle (meaning it can move in any di
 
 Although Project Silent Willow is the vehicle itself, the group of words ```Project Silent Willow``` represents a larger project (which includes this repository, other repositories [such as <a href="https://github.com/win21H2/Project-Silent-Willow-Main-Application">Project-Silent-Willow-Main-Application</a> which can be run on multiple OSes. Currently, I am working on a Windows Desktop version and trying to get a galaxy watch version running], and my <a href="https://324hz.dev">main website</a>) which consists of multiple smaller projects such as the above mentioned and LiDAR scanning.
 
+### Nvidia Jetson AI certification
+I found out that Nvidia had a certification section where you could get certificates for projects using AI with Nvidia and I submitted this project and managed to get it! The below include the comments on how I could improve/what was good with the project and I might (in the future) continue working on the project e.g. moving the control board to a PCB.
+
+ - AI:  3.5<br>
+Considering if you plan to continue developing the project, I’d encourage you to incorporate additional DNNs like object detection, segmentation, ect for more complex autonomous navigation.  Maybe you already plan to do this.
+ - Impact: 4<br>
+The work aims to improve the agility of autonomous ground vehicles and hence has many potential impacts in robotics.
+ - Reproducibility:  3.5<br>
+The code appears well-written an easy to follow.  I didn’t find plans for the physical robot itself, but maybe you have that somewhere?
+ - Documentation:  4<br>
+Thorough and well-written documentation of the code!
+
 ### Main future steps
  - Create documentation for the hardware side of the project (under `HARDWARE.md`)
  - Work on integrating the LiDAR unit (such as distance detection for vehicle control)
@@ -18,19 +30,6 @@ Although Project Silent Willow is the vehicle itself, the group of words ```Proj
  
 Image segmentation example<br><br>
 ![image](https://user-images.githubusercontent.com/92825997/200585969-ea243867-8ffa-4cd4-9251-5ca5d6b9b944.png)
- 
-### Feedback from Nvidia DLI (Jetson AI specialist certification)
-##### AI:  3.5<br>
-> Considering if you plan to continue developing the project, I’d encourage you to incorporate additional DNNs like object detection, segmentation, ect for more complex autonomous navigation. Maybe you already plan to do this.
-
-##### Impact: 4<br>
-> The work aims to improve the agility of autonomous ground vehicles and hence has many potential impacts in robotics.
-
-##### Reproducibility:  3.5<br>
-> The code appears well-written an easy to follow. I didn’t find plans for the physical robot itself, but maybe you have that somewhere?
-
-##### Documentation:  4<br>
-> Thorough and well-written documentation of the code!
 
 <br>
 
