@@ -6,6 +6,14 @@
 <br/>
 <br/>
 
+### Up next
+ - Implement new app
+ - > New Bluetooth connection UI
+ - > New control system UI
+ - Implement OTA uploads (might not be possible due to the project needing the serial monitor for debugging)
+ - Implement PCB design
+
+
 ### A description of Project Silent Willow
 Project Silent Willow is a mechanum wheel vehicle (meaning it can move in any direction without having to turn). I have been working on it for 2 years by now and will continue working on it through highschool as I develop my programming skills originally started off with just the base of the vehicle only having bare minimum features such as speed and direction control. As mentioned above, it is controlled by a custom application which I made in MIT App Inventor (ai2) and in the future I am planning to completely custom make the application in Android Studio using Kotlin and XML. I then later found out about Jetson nanos and I started integrating them in with for example the LiDAR being the first integration.
 
