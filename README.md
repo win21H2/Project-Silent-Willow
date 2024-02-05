@@ -1,6 +1,6 @@
 <h1 align="center">Project Silent Willow</h1>
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/92825997/187325584-4cc5d7f3-468a-4426-8c7f-93117b1a4f07.png" width=200/>
+    <img src="https://github.com/win21H2/win21H2/assets/92825997/89d1fb3e-6d2d-4fe8-ad59-f6b45a2971ec" width=200/>
     <img src="https://user-images.githubusercontent.com/92825997/227755863-9b850c8b-8f42-44a1-8fad-97de316e41c8.png" width=200/>
 </p>
 <br/>
